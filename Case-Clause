@@ -1,20 +1,37 @@
 select firstname, -- select first name about person name
 age,  -- which variable categorize 
 CASE 
-	when age >= 22 then 'adult' -- labeling data
+	when age >= 22 then 'adult' -- label  hot encoding
 	ELSE 'minor'
-END categorical --Label data variable name 
+END categorical --label  hot encoding
 from personality
 Order BY firstname; -- order them  type ascending
+
+
+
+
+
+--Case When Clause
+
+select firstname, age, -- select columns names
+case
+	when age >= 50 then 'You must retired' -- label  hot encoding
+	else 'You can''t''retired' -- label  hot encoding
+	end as retired_people -- new column name
+from personality 
+order by firstname;
+
+
+
 
 
 --Another more complex case clause examples
 
 select firstname, city, state, -- select columns on variable names
 	CASE 
-		when state = 'PA' then 'close' -- labeling data
-		when state = 'NJ' or state = 'MD' then 'far'
-		else 'very far'
+		when state = 'PA' then 'close' -- label  hot encoding
+		when state = 'NJ' or state = 'MD' then 'far' --label  hot encoding
+		else 'very far' -- label  hot encoding
 		end as distance -- giving a column name 
 from personality -- which table contain column names
 order by firstname; -- ordering firstname as asc
