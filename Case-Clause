@@ -1,0 +1,8 @@
+select firstname, -- select first name about person name
+age,  -- which variable categorize 
+CASE 
+	when age >= 22 then 'adult' -- labeling data
+	ELSE 'minor'
+END categorical --Label data variable name 
+from personality
+Order BY firstname; -- order them  type ascending
