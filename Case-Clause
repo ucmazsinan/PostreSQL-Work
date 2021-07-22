@@ -6,3 +6,16 @@ CASE
 END categorical --Label data variable name 
 from personality
 Order BY firstname; -- order them  type ascending
+
+
+--Another more complex case clause examples
+
+select firstname, city, state, -- select columns on variable names
+	CASE 
+		when state = 'PA' then 'close' -- labeling data
+		when state = 'NJ' or state = 'MD' then 'far'
+		else 'very far'
+		end as distance -- giving a column name 
+from personality -- which table contain column names
+order by firstname; -- ordering firstname as asc
+
