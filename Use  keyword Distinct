@@ -1,0 +1,20 @@
+select * from personality ; -- with dublcates values
+
+
+--Examples 1
+
+select distinct state from personality 
+order by state; -- without duplicate values using DİSTİNCT
+
+
+--Examples 2
+
+select distinct city, state from personality -- select columns values
+order by city, state; /* without duplicates values and ordering them
+						first  city then states */ 
+            
+            
+ -- Examples 3
+ 
+select distinct state , firstname from personality -- Select column name without dublicate values
+order by state, firstname; -- orderin them from bottom to top
