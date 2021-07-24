@@ -1,0 +1,31 @@
+/* Aggregates can be combined with a WHERE clause to produce more complex results. For
+example, the query */
+
+
+select * from personality;
+
+SELECT AVG(age) as avg FROM personality WHERE age >= 21 ;
+
+
+/* 
+NULL values are not processed by most aggregates, such as MAX(), SUM(), and AVG(); they are
+simply ignored. However, if a column contains only NULL values, the result is NULL, not zero.
+COUNT(*) is different in this respect. It does count NULL values because it looks at entire rows
+*/
+
+/*
+ 	Aggregate	| 	Function
+---------------------------------
+COUNT(*)		| 	count of rows
+---------------------------------
+SUM(colname)	|	total
+---------------------------------
+MAX(colname)	| 	maximum
+---------------------------------
+MIN(colname)	| 	minimum
+---------------------------------
+AVG(colname)	| 	average
+---------------------------------
+
+*/
+
