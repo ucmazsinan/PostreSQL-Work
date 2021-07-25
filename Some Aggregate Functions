@@ -43,3 +43,40 @@ select min(grades) from stats_students; -- find the minimum student grades
 select round(avg(grades),2) from stats_students; -- calculate average grades and round nearest hundrenth dec
 
 select sum(grades) from stats_students; -- calculate sum of grades.
+
+
+
+--find number disctint VALUES
+
+select * from personality;
+-- notice that firstname have two same name Sandy 
+
+--Group By Clauses
+
+
+select firstname, course_name,  count(*)
+from stats_students
+GROUP BY course_name, firstname
+order by  3;
+
+--Having Clauses
+
+
+select  city, state, min(age), max(age), round(avg(age),2) -- select column
+from personality -- table name
+group by city, state -- with group name also must include in select clauses the same name
+having min(age)< 123 or max(age)< 123  -- conditional clause
+order by state; -- order by with column state.
+
+
+
+
+
+
+
+
+
+
+
+
+
