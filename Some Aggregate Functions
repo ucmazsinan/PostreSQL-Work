@@ -28,4 +28,18 @@ AVG(colname)	| 	average
 ---------------------------------
 
 */
+-- as in 
 
+select * from stats_students; --show all tables
+
+select count(*) as counter from stats_students; -- count all rows even including null values
+
+select count(student_id) from stats_students;
+
+select max(grades) from stats_students; --find the maximum student grades
+
+select min(grades) from stats_students; -- find the minimum student grades
+
+select round(avg(grades),2) from stats_students; -- calculate average grades and round nearest hundrenth dec
+
+select sum(grades) from stats_students; -- calculate sum of grades.
