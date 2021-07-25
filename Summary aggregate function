@@ -1,0 +1,18 @@
+-- shows count(*) function and others..
+
+create table aggtest(col integer); -- create table as aggtest
+
+insert into aggtest values(NULL); -- insert null values into aggtest table
+
+select sum(col) -- using sum function
+from aggtest;
+
+insert into aggtest values(124);-- insert 124 value into aggtest table.
+
+select * from aggtest; -- calling a table.
+
+select count(*) from aggtest; -- count function include all rows even null values.
+
+select sum(col) from aggtest; -- result 124
+select avg(col) from aggtest; /* result 124 because avg function  include all values 
+except null values.*/
