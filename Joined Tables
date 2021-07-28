@@ -73,3 +73,24 @@ insert into customer values(
 	);
 	
 
+
+select customer_id from salesorder
+where order_id = 14673;
+
+select name from customer 
+where customer_id = 648 ;
+
+select * from customer;
+select * from salesorder;
+
+select customer.name --query result
+from customer, salesorder --query tables
+						  -- table join
+where customer.customer_id = salesorder.customer_id
+and salesorder.order_id = 14673; --query restriction
+
+
+
+
+
+
