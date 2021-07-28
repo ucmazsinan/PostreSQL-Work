@@ -1,0 +1,37 @@
+-- Create table for joining operation.
+
+create table customer(
+	customer_id integer,
+	name char(30),
+	telephone char(14),
+	street char(40),
+	city char(25),
+	state char(2),
+	zipcode char(10),
+	country char(20)
+);
+
+create table employee(
+	employee_id integer,
+	name char(30), -- joins to employee.name
+	hire_date date
+);
+
+create table part(
+	part_id integer,
+	name char(30),
+	cost numeric(8,2),
+	weight float
+);
+
+
+create table salesorder(
+	order_id integer,
+	customer_id integer, -- joins to customer.customer_id
+	employee_id integer, --joins to employee.employee_id
+	part_id integer, -- joins to part.part_id
+	order_date date,
+	ship_date date,
+	payment numeric(8,2)
+);
+
