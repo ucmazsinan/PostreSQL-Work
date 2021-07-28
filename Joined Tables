@@ -35,3 +35,41 @@ create table salesorder(
 	payment numeric(8,2)
 );
 
+-- insertion operations
+
+insert into customer values(
+	
+		648,
+		'Fleer Gearwork, Inc.',
+		'1-610-555-7829',
+		'830 Winding Way',
+		'Millersville',
+		'AL',
+		'35041',
+		'USA'
+);
+
+	insert into employee values(
+		24,
+		'LLee Meyers',
+		'16/10/1989'
+	);
+	
+	insert into part values(
+		153,
+		'Garage Door Spring',
+		6.20
+	);
+
+	insert into salesorder values(
+		14673,
+		648,
+		24,
+		153,
+		'19/07/1994',
+		'28/07/94',
+		18.39
+		
+	);
+	
+
