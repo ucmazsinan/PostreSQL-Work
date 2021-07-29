@@ -92,5 +92,20 @@ and salesorder.order_id = 14673; --query restriction
 
 
 
+select customer.name as "CustomerName", employee.name as "EmployeeName"
+from  salesorder, customer, employee
+where salesorder.customer_id = customer.customer_id and 
+	   salesorder.employee_id = employee.employee_id and 
+	   salesorder.order_id = 14673;
+	   
+select * from salesorder;
 
+select customer.name as customername, /*  results */
+employee.name as employeename, 
+part.name as partname      
+from salesorder, customer, employee, part -- Tables
+where salesorder.customer_id = customer.customer_id and/*  join operations. */
+	   salesorder.employee_id = employee.employee_id and
+	   salesorder.part_id = part.part_id and 
+	   salesorder.order_id = 14673;
 
