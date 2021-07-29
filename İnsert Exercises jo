@@ -1,0 +1,66 @@
+ -- insert table 1
+ 
+ select * from customer;
+
+INSERT INTO public.customer(
+	customer_id, name, telephone, street, city, state, zipcode, country)
+	VALUES (649, 'Getir,Inc.', '+902564256', '06906 Cankaya', 'İstanbul', 'TR', 09654, 'Turkey');	
+
+INSERT INTO public.customer(
+	customer_id, name, telephone, street, city, state, zipcode, country)
+	VALUES (650, 'Yemek Sepate,Inc.', '+904896542', '323 Şişli',' İstanbul' , 'TR', 09654, 'Turkey');	
+
+
+ -- insert table 2
+ 
+ Select * from employee;
+
+INSERT INTO public.employee(
+	employee_id, name, hire_date)
+	VALUES (25, 'Batu Gult', '26/07/2015');
+
+INSERT INTO public.employee(
+	employee_id, name, hire_date)
+	VALUES (26, 'Nevzat Ga', '26/07/2015');
+ 
+ 
+ 
+  -- insert table 3
+  
+  select * from part;
+
+INSERT INTO public.part(
+	part_id, name, cost, weight)
+	VALUES (154, 'Food Education', 18.55, 45);
+	
+INSERT INTO public.part(
+	part_id, name, cost, weight)
+	VALUES (155, 'Food Baker', 28.55, 245);
+  
+   -- insert table 4
+   
+select * from salesorder;
+
+select * from customer;
+
+select * from part;
+
+select * from employee;
+
+INSERT INTO public.salesorder(
+	order_id, customer_id, employee_id, part_id, order_date, ship_date, payment)
+	VALUES (14674, 649, 25, 154, '15/06/2021', '25/06/2021', 12.36);
+	
+INSERT INTO public.salesorder(
+	order_id, customer_id, employee_id, part_id, order_date, ship_date, payment)
+	VALUES (14675, 650, 26, 155, '25/02/2021', '15/03/2021', 5.65);
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
