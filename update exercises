@@ -1,0 +1,5 @@
+update salesorder set customer_id = 651 where order_date = '2021-07-15';
+
+update salesorder set customer_id = 652 where ship_date = '2021-03-08';
+
+update  part set weight = 32 where cost =6.20;
