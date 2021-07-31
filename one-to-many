@@ -1,0 +1,43 @@
+--create a new two table and insert into values
+
+create table animal(
+	animal_id integer,
+	name char(20)
+);
+
+insert into animal(animal_id, name) 
+values(507, 'rabbit');
+
+insert into animal(animal_id, name)
+values(508, 'cat')
+
+create table vegatables(
+	animal_id integer,
+	name char(20)
+);
+
+insert into vegatables (animal_id, name)
+values(507, 'lettuce')
+
+insert into vegatables (animal_id, name)
+values(507, 'carret')
+
+insert into vegatables (animal_id, name)
+values(507, 'nut')
+
+-- call the tables
+
+select * from animal;
+
+select * from vegatables;
+
+--unjoined tables
+select * 
+from animal, vegatables;
+
+--using aliases and one to many
+
+select * 
+from animal a, vegatables v
+where a.animal_id = v.animal_id and
+a.animal_id = 507;
