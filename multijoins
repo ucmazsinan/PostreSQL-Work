@@ -1,0 +1,24 @@
+select distinct customer.name as Customer_Name, employee.name as emplyee_name, count(*)
+from salesorder, customer, employee
+where salesorder.customer_id = customer.customer_id and
+	  salesorder.employee_id = employee.employee_id 
+	  group by Customer.name, employee.name
+	  order by customer.name, employee.name ;
+
+
+select * from customer ;
+	  
+select customer.name 
+from salesorder, customer
+where salesorder.customer_id = customer.customer_id and
+customer.customer_id = 652;
+
+
+
+select * from employee;
+
+select employee.name as "Employee_Name"
+from employee, customer, salesorder
+where salesorder.employee_id = employee.employee_id and 
+	  salesorder.customer_id = customer.customer_id and 
+salesorder.employee_id = 25 ;
