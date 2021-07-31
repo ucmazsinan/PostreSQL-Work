@@ -6,6 +6,8 @@ where salesorder.customer_id = customer.customer_id and
 	  order by customer.name, employee.name ;
 
 
+--find the customer assigned to customer number 652
+
 select * from customer ;
 	  
 select customer.name 
@@ -13,6 +15,8 @@ from salesorder, customer
 where salesorder.customer_id = customer.customer_id and
 customer.customer_id = 652;
 
+
+--find the employee assigned to employee number 25
 
 
 select * from employee;
