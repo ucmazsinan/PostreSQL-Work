@@ -1,0 +1,18 @@
+/* Create a new table as statename and join it customer table*/
+
+create table statename(
+	code char(2),
+	name char(30)
+);
+
+insert into statename values (
+	'AL',
+	'Alabama'
+);
+
+select * from customer;
+
+select statename.name  as "Cuustomer_Name"
+from statename, customer
+where statename.code = customer.state and 
+customer.customer_id = 648;
