@@ -26,3 +26,13 @@ from employee, customer, salesorder
 where salesorder.employee_id = employee.employee_id and 
 	  salesorder.customer_id = customer.customer_id and 
 salesorder.employee_id = 25 ;
+
+
+--find the parts assigned to part_id 155  and count part names.
+
+select Distinct part.name as "Part_Name", count(*)
+from part, salesorder
+where salesorder.part_id = part.part_id and 
+part.part_id = 155
+group by part.name
+order by part.name ;
