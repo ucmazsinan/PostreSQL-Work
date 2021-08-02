@@ -1,0 +1,29 @@
+select * from customer;
+
+select c2.name -- result column
+from customer c, customer c2 -- select from table
+where c.customer_id = 648 and -- conditions
+c.zipcode = c2.zipcode; -- self join 
+
+select c.street -- resuly column
+from customer c, customer c2 -- from which table 
+where c.city = c2.city and -- self joined 
+c.customer_id = 651 ; -- conditions
+
+select c.name, s.order_id -- result
+from customer c, customer c2, salesorder s -- select which table
+where c.customer_id = 648 and -- condition
+c.customer_id = s.customer_id and -- joined
+c2.zipcode = c.zipcode and -- other joined
+c2.customer_id <> 648; -- other condition returned null
+
+select * from salesorder, part;
+
+
+select c.name, s.order_id, p.name
+from customer c , customer c2, salesorder s, part p
+where c.customer_id = 648 and 
+c.customer_id = s.customer_id and 
+p.part_id = s.part_id and 
+c2.zipcode = c.zipcode and 
+c2.customer_id <> 650;
