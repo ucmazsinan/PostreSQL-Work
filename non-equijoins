@@ -1,0 +1,23 @@
+
+select * from part;
+
+SELECT C2.NAME -- result
+FROM CUSTOMER C, CUSTOMER C2 -- result table
+WHERE C.customer_id = 648 AND -- condition
+C.COUNTRY <> C2.COUNTRY -- not euqality condition
+ORDER BY C2.NAME asc; -- order by name asc
+
+select e.name, e.hire_date 
+from employee e, employee e2 
+where e.employee_id = 24 and 
+e.hire_date < e2.hire_date
+order by e.name, e.hire_date;
+
+select p.name, p.cost 
+from part p, part p2
+where p2.cost > p.cost and 
+p.part_id = 153 
+order by p.name, p.cost ;
+
+
+
