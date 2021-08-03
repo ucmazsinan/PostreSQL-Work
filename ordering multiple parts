@@ -1,0 +1,32 @@
+--ordering multiple parts
+
+select * from salesorder;
+
+create table orderpart(
+	order_id integer,
+	part_id integer,
+	quantity integer default 1 -- setting initially value
+	
+);
+
+insert into orderpart(order_id, part_id, quantity) 
+values(15398, 156, 5 )
+
+--firt query
+select p.name -- result
+from part as p, orderpart as op -- result table
+where p.part_id = op.part_id and  -- condition for join
+op.order_id = 15398; -- contidion result
+
+--second query
+
+select * from salesorder, part, orderpart ;
+
+select p.name , op.quantity
+from part p, orderpart op, salesorder s
+where p.part_id = op.part_id and 
+	  s.order_id = op.order_id and 
+	  s.order_date = '1994/07/19'and
+	  s.customer_id  = 648;
+
+
