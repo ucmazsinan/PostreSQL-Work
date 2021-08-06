@@ -1,0 +1,31 @@
+--create a sequence function
+create sequence functest_seq; 
+
+--returns ever-increasing value
+select nextval('functest_seq');
+
+-- return previous sequence value
+select currval('functest_seq');
+
+--sets the sequences counter to a new value
+select setval('functest_seq', 50);
+
+
+select nextval('functest_seq');
+
+create sequence cutomer_seq;
+
+create table customers(
+	customer_id integer default nextval('cutomer_seq'),
+	name char(20)
+
+);
+
+insert into customers(customer_id, name)
+values(nextval('cutomer_seq'),'Sinan');
+
+insert into customers(name) values('Berk');
+
+insert into customers(name) values('Öykü');
+insert into customers(name) values('Belemir');
+select * from customers;
