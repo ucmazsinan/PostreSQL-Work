@@ -1,0 +1,29 @@
+create table aquatic_animal(
+	animal_id serial,
+	animal_name varchar(20),
+	water_temprature float
+
+);
+
+create table terrestrial_animal(
+	animal_id serial,
+	animal_name varchar(20),
+	running_speed float
+
+);
+
+insert into aquatic_animal(animal_name, water_temprature)
+values('swordfish',12.4);
+
+select * from aquatic_animal;
+
+insert into terrestrial_animal(animal_name,
+							  running_speed)
+							  values('cheetah', 15.6);
+							  
+select * from terrestrial_animal ;
+
+select animal_name from aquatic_animal
+union
+select animal_name from terrestrial_animal
+order by animal_name;
