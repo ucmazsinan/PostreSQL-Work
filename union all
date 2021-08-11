@@ -1,0 +1,26 @@
+/*  
+
+By default union prevents duplicate rows from being displayed. For example insert penguin into both tables
+but penguin is not duplicated in the output . To preserve duplicates, you must use union all as shown:
+
+*/
+
+insert into aquatic_animal(animal_name, water_temprature)
+values('penguin',-36.4);
+
+insert into terrestrial_animal(animal_name,running_speed)
+							  values('penguin', 1.6);
+                
+--result showing one times
+
+   select animal_name from aquatic_animal
+union
+select animal_name from terrestrial_animal
+order by animal_name;
+
+--result displayed two times penguin
+select animal_name from aquatic_animal
+union all
+select animal_name from terrestrial_animal
+order by animal_name;
+
