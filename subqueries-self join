@@ -1,0 +1,61 @@
+create table friends(
+	friends_id serial,
+	friends_name varchar(20),
+	friends_lastname varchar(20),
+	friends_state varchar(2)
+);
+
+insert into friends(
+	friends_name,
+	friends_lastname,
+	friends_state  	
+				  ) 
+values('Dean', 'Yeager','MA');
+
+insert into friends(
+	friends_name,
+	friends_lastname,
+	friends_state  	
+				  ) 
+values('Ned', 'Millstone','MD');
+
+insert into friends(
+	friends_name,
+	friends_lastname,
+	friends_state  	
+				  ) 
+values('Sandy', 'Weber','MA');
+
+insert into friends(
+	friends_name,
+	friends_lastname,
+	friends_state  	
+				  ) 
+values('Victor', 'Tabor','PA');
+
+
+insert into friends(
+	friends_name,
+	friends_lastname,
+	friends_state  	
+				  ) 
+values('Dick', 'Gleason','PA');
+
+
+
+select f1.friends_name, f1.friends_lastname, f1.friends_state
+from friends as f1, friends as f2
+where f1.friends_state <> f2.friends_state and 
+f2.friends_name = 'Dean' and 
+f2.friends_lastname = 'Yeager' 
+order by friends_name, friends_lastname;
+
+select f2.friends_name, f2.friends_state
+from friends as f2 
+where f2.friends_state <> (
+select f1.friends_state
+	from friends f1
+	where f1.friends_name = 'Dick' and 
+	f1.friends_lastname = 'Gleason'
+)
+order by friends_name, friends_lastname;
