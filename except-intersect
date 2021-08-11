@@ -1,0 +1,12 @@
+select animal_name from terrestrial_animal--shows terrestrial animal
+except
+select animal_name from aquatic_animal -- except this table.
+order by 1;
+
+
+--exist elements both tables.
+
+select animal_name from aquatic_animal
+intersect
+select animal_name from terrestrial_animal
+order by 1;
