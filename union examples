@@ -1,0 +1,32 @@
+
+--create new table
+create table students(
+students_id serial,
+	students_firstname varchar(20),
+	student_surname varchar(20),
+	student_number varchar(7)
+);
+
+-- adding data into table
+insert into students(students_firstname, student_surname, student_number)
+values('öykü','büyükakın','2179652');
+insert into students(students_firstname, student_surname, student_number)
+values('belemir','atik','2179252');
+insert into students(students_firstname, student_surname, student_number)
+values('berk','çelebi','2172172');
+insert into students(students_firstname, student_surname, student_number)
+values('sinan','uçmaz','21791352');
+insert into students(students_firstname, student_surname, student_number)
+values('fatih','akbayrak','2173562');
+insert into students(students_firstname, student_surname, student_number)
+values('helin','tutku','2179256');
+insert into students(students_firstname, student_surname, student_number)
+values('helin','tutku','2179232');
+
+--union of examples
+
+
+select students_firstname from students
+union
+select student_surname from students
+order by students_firstname;
