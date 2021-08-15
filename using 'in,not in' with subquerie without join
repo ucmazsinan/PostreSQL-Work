@@ -1,0 +1,12 @@
+select name 
+from employee 
+where employee_id in (select employee_id 
+					 from salesorder 
+					 where order_date = '1994/07/19');
+
+
+select name 
+from customer 
+where customer_id not in (
+select customer_id 
+from salesorder);
