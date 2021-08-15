@@ -10,3 +10,5 @@ from customer
 where customer_id not in (
 select customer_id 
 from salesorder);
+--return no rows but wwe prevent this situtation as in ;
+where customer_id is not null :
